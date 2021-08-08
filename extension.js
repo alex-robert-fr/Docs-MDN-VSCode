@@ -20,8 +20,10 @@ function activate (context) {
     // The code you place here will be executed every time your command is executed
     const editor = vscode.window.activeTextEditor
     const selectText = editor.document.getText(editor.selection)
+    const url = 'https://developer.mozilla.org/fr/search?q=' + selectText
+    vscode.env.openExternal(vscode.Uri.parse(url))
     // Display a message box to the user
-    vscode.window.showInformationMessage('Docs MDN, ' + selectText + ' !')
+    vscode.window.showInformationMessage('Docs MDN, ' + url + ' !')
   })
 
   context.subscriptions.push(disposable)
