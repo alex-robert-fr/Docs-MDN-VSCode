@@ -16,11 +16,12 @@ function activate (context) {
   // The command has been defined in the package.json file
   // Now provide the implementation of the command with  registerCommand
   // The commandId parameter must match the command field in package.json
-  let disposable = vscode.commands.registerCommand('docs-mdn.docsmdn', () => {
+  const disposable = vscode.commands.registerCommand('docs-mdn.docsmdn', () => {
     // The code you place here will be executed every time your command is executed
-
+    const editor = vscode.window.activeTextEditor
+    const selectText = editor.document.getText(editor.selection)
     // Display a message box to the user
-    vscode.window.showInformationMessage('Hello World from Docs MDN!')
+    vscode.window.showInformationMessage('Docs MDN, ' + selectText + ' !')
   })
 
   context.subscriptions.push(disposable)
