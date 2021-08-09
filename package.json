@@ -19,7 +19,16 @@
 				"command": "docs-mdn.docsmdn",
 				"title": "Search MDN Docs"
 			}
-		]
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorHasSelection",
+					"command": "docs-mdn.docsmdn",
+					"group": "navigation"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"lint": "eslint .",
