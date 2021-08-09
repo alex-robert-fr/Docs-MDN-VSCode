@@ -10,21 +10,26 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:docs-mdn.docsmdn"
+		"onCommand:docs-mdn.docsmdnglobal",
+		"onCommand:docs-mdn.docsmdnprecise"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "docs-mdn.docsmdn",
-				"title": "Search MDN Docs"
+				"command": "docs-mdn.docsmdnglobal",
+				"title": "Search the MDN global docs"
+			},
+			{
+				"command": "docs-mdn.docsmdnprecise",
+				"title": "Search precisely in the MDN docs"
 			}
 		],
 		"menus": {
 			"editor/context": [
 				{
 					"when": "editorHasSelection",
-					"command": "docs-mdn.docsmdn",
+					"command": "docs-mdn.docsmdnglobal",
 					"group": "navigation"
 				}
 			]
